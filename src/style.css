@@ -736,6 +736,15 @@ input {
     .settings-panel {
         top: 64px;
         right: 12px;
+        
+    }
+    .app-header {
+        text-align: left;
+    }
+
+    .app-header h1,
+    .app-header p {
+        text-align: left;
     }
 
     /*
