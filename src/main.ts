@@ -1,6 +1,6 @@
 //@ts-nocheck
 
-import "./src/style.css";
+import "./style.css";
 
 const chatForm =
     document.querySelector<HTMLFormElement>("#chat-form");
