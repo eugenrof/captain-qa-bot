@@ -738,35 +738,44 @@ input {
         right: 12px;
     }
 
+    /*
+     * Keep the API key input at 16px to prevent
+     * mobile Safari from zooming when it receives focus.
+     */
+    .api-key-input {
+        font-size: 16px;
+    }
+
+    /*
+     * Give the header text as much horizontal space as possible.
+     * The previous 52px right padding was unnecessarily reducing
+     * the available width and causing text such as
+     * "Software Testing" to wrap awkwardly.
+     */
     .app-header {
         align-items: flex-start;
+
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-right: 0;
+
         text-align: left;
     }
 
+    /*
+     * The second div contains the complete introductory text.
+     * Let it occupy all remaining space beside the robot avatar.
+     */
     .app-header > div:not(.robot-avatar) {
         flex: 1;
         min-width: 0;
+
         text-align: left;
     }
 
     .app-header h1,
     .app-header p {
         text-align: left;
-    }
-}
-    /*
-     * Prevent mobile Safari from zooming the viewport when
-     * the Gemini API key input receives focus.
-     */
-    .api-key-input {
-        font-size: 16px;
-    }
-
-    .app-header {
-        padding-top: 20px;
-        padding-bottom: 20px;
-
-        padding-right: 52px;
     }
 
     .message {
@@ -779,14 +788,6 @@ input {
 
     .user-message {
         width: fit-content;
-    }
-
-    /*
-     * Keep the introductory "Howdy, QA Adventurer!" text
-     * left-aligned on mobile.
-     */
-    .message-content {
-        text-align: left;
     }
 
     .chat {
@@ -833,7 +834,6 @@ input {
 
     /*
      * Keep the API key input at 16px even on very small screens.
-     * This prevents Safari's automatic focus zoom.
      */
     .api-key-input {
         font-size: 16px;
@@ -877,10 +877,6 @@ input {
     .chat-form button {
         width: 46px;
     }
-
-    .message-content {
-        text-align: left;
-    }
 }
 
 
@@ -917,10 +913,6 @@ input {
     .chat-form button {
         width: 44px;
     }
-
-    .message-content {
-        text-align: left;
-    }
 }
 
 
@@ -955,7 +947,8 @@ input {
     font-size: 1.1rem;
     line-height: 1;
 
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+    box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.25);
 
     transition:
         background 0.15s ease,
