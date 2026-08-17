@@ -83,6 +83,11 @@ input {
     font: inherit;
 }
 
+
+/* =========================================================
+   Settings
+   ========================================================= */
+
 .settings-button {
     position: fixed;
 
@@ -275,6 +280,7 @@ input {
 
 .settings-help a {
     color: #aeb8ff;
+
     text-decoration: underline;
     text-underline-offset: 2px;
 }
@@ -286,6 +292,7 @@ input {
 .settings-help a:focus-visible {
     outline: 2px solid #aeb8ff;
     outline-offset: 2px;
+
     border-radius: 2px;
 }
 
@@ -352,6 +359,11 @@ input {
     color: #e8e8e8;
     background: #242731;
 }
+
+
+/* =========================================================
+   App
+   ========================================================= */
 
 .app {
     position: relative;
@@ -422,6 +434,11 @@ input {
 
     line-height: 1.4;
 }
+
+
+/* =========================================================
+   Chat
+   ========================================================= */
 
 .chat {
     flex: 1;
@@ -498,6 +515,11 @@ input {
     overflow-wrap: anywhere;
 }
 
+
+/* =========================================================
+   Thinking animation
+   ========================================================= */
+
 .thinking {
     display: flex;
     align-items: baseline;
@@ -550,6 +572,11 @@ input {
         transform: translateY(-3px);
     }
 }
+
+
+/* =========================================================
+   Chat form
+   ========================================================= */
 
 .chat-form {
     position: sticky;
@@ -622,6 +649,11 @@ input {
     opacity: 0.5;
 }
 
+
+/* =========================================================
+   Footer
+   ========================================================= */
+
 .app-footer {
     display: flex;
 
@@ -663,6 +695,11 @@ input {
     border-radius: 2px;
 }
 
+
+/* =========================================================
+   Accessibility
+   ========================================================= */
+
 .visually-hidden {
     position: absolute;
 
@@ -681,6 +718,11 @@ input {
     border: 0;
 }
 
+
+/* =========================================================
+   Mobile
+   ========================================================= */
+
 @media (max-width: 600px) {
     .app {
         padding-inline: 12px;
@@ -694,6 +736,14 @@ input {
     .settings-panel {
         top: 64px;
         right: 12px;
+    }
+
+    /*
+     * Prevent mobile Safari from zooming the viewport when
+     * the Gemini API key input receives focus.
+     */
+    .api-key-input {
+        font-size: 16px;
     }
 
     .app-header {
@@ -715,6 +765,14 @@ input {
         width: fit-content;
     }
 
+    /*
+     * Keep the introductory "Howdy, QA Adventurer!" text
+     * left-aligned on mobile.
+     */
+    .message-content {
+        text-align: left;
+    }
+
     .chat {
         padding-top: 12px;
     }
@@ -729,6 +787,11 @@ input {
         padding-bottom: 16px;
     }
 }
+
+
+/* =========================================================
+   Small mobile
+   ========================================================= */
 
 @media (max-width: 400px) {
     .app {
@@ -752,6 +815,14 @@ input {
         padding: 16px;
     }
 
+    /*
+     * Keep the API key input at 16px even on very small screens.
+     * This prevents Safari's automatic focus zoom.
+     */
+    .api-key-input {
+        font-size: 16px;
+    }
+
     .app-header {
         gap: 10px;
     }
@@ -766,8 +837,6 @@ input {
 
     .message {
         max-width: 95%;
-
-        padding: 12px 13px;
     }
 
     .robot-message {
@@ -792,7 +861,16 @@ input {
     .chat-form button {
         width: 46px;
     }
+
+    .message-content {
+        text-align: left;
+    }
 }
+
+
+/* =========================================================
+   Very small screens
+   ========================================================= */
 
 @media (max-width: 320px) {
     .app-header {
@@ -822,6 +900,10 @@ input {
 
     .chat-form button {
         width: 44px;
+    }
+
+    .message-content {
+        text-align: left;
     }
 }
 
@@ -898,6 +980,7 @@ input {
         height: 40px;
     }
 }
+
 
 /* =========================================================
    Text selection
