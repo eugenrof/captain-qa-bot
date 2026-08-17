@@ -371,23 +371,6 @@ function loadApiKey(): void {
    Gemini API key validation
    ========================================================= */
 
-function isValidApiKeyFormat(
-    apiKey: string
-): boolean {
-    if (!apiKey.startsWith("AIza")) {
-        return false;
-    }
-
-    if (
-        apiKey.length < 30 ||
-        apiKey.length > 100
-    ) {
-        return false;
-    }
-
-    return true;
-}
-
 async function validateApiKey(
     apiKey: string
 ): Promise<void> {
@@ -459,16 +442,6 @@ async function saveApiKey(): Promise<void> {
     if (!apiKey) {
         showSettingsError(
             "Please enter a Gemini API key."
-        );
-
-        apiKeyInput.focus();
-
-        return;
-    }
-
-    if (!isValidApiKeyFormat(apiKey)) {
-        showSettingsError(
-            "That doesn't look like a valid Gemini API key."
         );
 
         apiKeyInput.focus();
