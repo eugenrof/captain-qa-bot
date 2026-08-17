@@ -76,9 +76,9 @@ clearly distinguish between your explanation and authoritative references.
 `;
 
 
-/* =========================================================
-   Page scrolling / Back to Top
-   ========================================================= */
+/* =========================
+   PAGE SCROLLING
+========================= */
 
 function scrollPageToBottom(
     smooth = false
@@ -124,9 +124,9 @@ backToTopButton?.addEventListener(
 );
 
 
-/* =========================================================
-   Messages
-   ========================================================= */
+/* =========================
+   CHAT MESSAGES
+========================= */
 
 function addMessage(
     message: string,
@@ -200,8 +200,17 @@ function addMessage(
         messageElement
     );
 
-    scrollPageToBottom();
+    /*
+     * IMPORTANT:
+     * Do not automatically scroll to the bottom here.
+     *
+     * Long bot answers can be much taller than the viewport.
+     * Automatically scrolling here would force the user to the
+     * bottom of the page and make it difficult to read from the
+     * beginning or use the Back to top button.
+     */
 }
+
 
 function addLoadingMessage(): HTMLElement | null {
     if (!chatMessages) return null;
@@ -271,15 +280,19 @@ function addLoadingMessage(): HTMLElement | null {
         messageElement
     );
 
+    /*
+     * Keep the automatic scroll while the bot is thinking.
+     * This makes sure the user can see the loading indicator.
+     */
     scrollPageToBottom(true);
 
     return messageElement;
 }
 
 
-/* =========================================================
-   Settings helpers
-   ========================================================= */
+/* =========================
+   SETTINGS
+========================= */
 
 function showSettingsError(
     message: string
@@ -367,9 +380,9 @@ function loadApiKey(): void {
 }
 
 
-/* =========================================================
-   Gemini API key validation
-   ========================================================= */
+/* =========================
+   API KEY VALIDATION
+========================= */
 
 async function validateApiKey(
     apiKey: string
@@ -424,10 +437,6 @@ async function validateApiKey(
     }
 }
 
-
-/* =========================================================
-   Save / Clear API key
-   ========================================================= */
 
 async function saveApiKey(): Promise<void> {
     if (!apiKeyInput || !settingsSave) {
@@ -504,6 +513,7 @@ async function saveApiKey(): Promise<void> {
     }
 }
 
+
 function clearApiKey(): void {
     localStorage.removeItem(
         API_KEY_STORAGE_KEY
@@ -520,9 +530,9 @@ function clearApiKey(): void {
 }
 
 
-/* =========================================================
-   Gemini chat
-   ========================================================= */
+/* =========================
+   GEMINI API
+========================= */
 
 async function askGeminiDirectly(
     message: string
@@ -597,10 +607,6 @@ async function askGeminiDirectly(
 }
 
 
-/* =========================================================
-   Chat API
-   ========================================================= */
-
 async function askCaptainQABot(
     message: string
 ): Promise<string> {
@@ -641,9 +647,9 @@ async function askCaptainQABot(
 }
 
 
-/* =========================================================
-   Settings events
-   ========================================================= */
+/* =========================
+   SETTINGS EVENTS
+========================= */
 
 settingsButton?.addEventListener(
     "click",
@@ -674,9 +680,9 @@ settingsClear?.addEventListener(
 );
 
 
-/* =========================================================
-   Close settings with Escape
-   ========================================================= */
+/* =========================
+   ESCAPE KEY
+========================= */
 
 document.addEventListener(
     "keydown",
@@ -692,9 +698,9 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   Chat
-   ========================================================= */
+/* =========================
+   CHAT SUBMIT
+========================= */
 
 chatForm?.addEventListener(
     "submit",
@@ -730,6 +736,11 @@ chatForm?.addEventListener(
 
             loadingMessage?.remove();
 
+            /*
+             * addMessage() deliberately does NOT scroll.
+             * This prevents long answers from forcing the page
+             * to the bottom when they are inserted.
+             */
             addMessage(
                 answer,
                 "bot"
@@ -763,9 +774,10 @@ chatForm?.addEventListener(
 );
 
 
-/* =========================================================
-   Initialization
-   ========================================================= */
+/* =========================
+   INITIALIZATION
+========================= */
 
 loadApiKey();
+
 updateBackToTopVisibility();
