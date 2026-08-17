@@ -515,6 +515,10 @@ input {
     overflow-wrap: anywhere;
 }
 
+.intro-message {
+    overflow-wrap: normal;
+}
+
 
 /* =========================================================
    Thinking animation
@@ -738,20 +742,10 @@ input {
         right: 12px;
     }
 
-    /*
-     * Keep the API key input at 16px to prevent
-     * mobile Safari from zooming when it receives focus.
-     */
     .api-key-input {
         font-size: 16px;
     }
 
-    /*
-     * Give the header text as much horizontal space as possible.
-     * The previous 52px right padding was unnecessarily reducing
-     * the available width and causing text such as
-     * "Software Testing" to wrap awkwardly.
-     */
     .app-header {
         align-items: flex-start;
 
@@ -762,10 +756,6 @@ input {
         text-align: left;
     }
 
-    /*
-     * The second div contains the complete introductory text.
-     * Let it occupy all remaining space beside the robot avatar.
-     */
     .app-header > div:not(.robot-avatar) {
         flex: 1;
         min-width: 0;
@@ -776,6 +766,11 @@ input {
     .app-header h1,
     .app-header p {
         text-align: left;
+    }
+
+    .intro-message {
+        white-space: nowrap;
+        font-size: 0.9rem;
     }
 
     .message {
@@ -832,9 +827,6 @@ input {
         padding: 16px;
     }
 
-    /*
-     * Keep the API key input at 16px even on very small screens.
-     */
     .api-key-input {
         font-size: 16px;
     }
