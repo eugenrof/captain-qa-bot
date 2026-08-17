@@ -41,6 +41,9 @@ const GEMINI_MODEL =
 const GEMINI_API_URL =
     `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_MODEL}:generateContent`;
 
+const QA_BOT_LOGO_URL =
+    "https://raw.githubusercontent.com/eugenrof/captain-qa-bot/refs/heads/main/images/qa_bot_logo.png";
+
 const SYSTEM_PROMPT = `
 You are Captain QA Bot, an AI assistant specialized in software testing and quality assurance.
 
@@ -153,9 +156,10 @@ function addMessage(
             "message-avatar";
 
         avatar.src =
-            "https://raw.githubusercontent.com/eugenrof/captain-qa-bot/refs/heads/main/images/qa_bot_logo.png";
+            QA_BOT_LOGO_URL;
 
-        avatar.alt = "";
+        avatar.alt =
+            "Captain QA Bot";
 
         const name =
             document.createElement("span");
@@ -221,9 +225,10 @@ function addLoadingMessage(): HTMLElement | null {
         "message-avatar";
 
     avatar.src =
-        "/images/qa_bot_logo.png";
+        QA_BOT_LOGO_URL;
 
-    avatar.alt = "";
+    avatar.alt =
+        "Captain QA Bot";
 
     const name =
         document.createElement("span");
