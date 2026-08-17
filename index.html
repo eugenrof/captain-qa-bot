@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Captain QA Bot</title>
+
+    <meta
+        name="description"
+        content="Captain QA Bot — an experimental AI-powered learning assistant for software testing."
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        sizes="32x32"
+        href="/images/favicon.png"
+    >
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Captain QA Bot">
+    <meta
+        property="og:description"
+        content="Your slightly obsessive QA learning buddy — an experimental AI-powered assistant for software testing."
+    >
+    <meta
+        property="og:image"
+        content="/images/qa_bot_logo.png"
+    >
+    <meta
+        property="og:image:type"
+        content="image/png"
+    >
+    <meta
+        property="og:image:alt"
+        content="Captain QA Bot"
+    >
+    <meta property="og:site_name" content="Captain QA Bot">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Captain QA Bot">
+    <meta
+        name="twitter:description"
+        content="Your slightly obsessive QA learning buddy — an experimental AI-powered assistant for software testing."
+    >
+    <meta
+        name="twitter:image"
+        content="/images/qa_bot_logo.png"
+    >
+    <meta
+        name="twitter:image:alt"
+        content="Captain QA Bot"
+    >
+</head>
+
+<body>
+
+    <!-- Settings -->
+    <button
+        id="settings-button"
+        class="settings-button"
+        type="button"
+        aria-label="Gemini API settings"
+        aria-expanded="false"
+        aria-controls="settings-panel"
+    >
+        ⚙
+    </button>
+
+    <div
+        id="settings-panel"
+        class="settings-panel"
+        hidden
+    >
+        <div class="settings-header">
+            <h2>Gemini API Settings</h2>
+
+            <button
+                id="settings-close"
+                class="settings-close"
+                type="button"
+                aria-label="Close settings"
+            >
+                ×
+            </button>
+        </div>
+
+        <label
+            class="settings-label"
+            for="api-key-input"
+        >
+            Gemini API key
+        </label>
+
+        <input
+            id="api-key-input"
+            class="api-key-input"
+            type="password"
+            placeholder="Your Gemini API Key here..."
+            autocomplete="off"
+        >
+
+        <div class="settings-help">
+            <p class="settings-help-title">
+                ⓘ Where do I get a Gemini API key?
+            </p>
+            <p class="settings-help-subtitle">
+                Create one in <a href="https://aistudio.google.com/" target="_blank" rel="noopener noreferrer">Google AI Studio</a> → API Keys.
+            </p>
+            <ol class="settings-help-steps">
+                <li>Open Google AI Studio</li>
+                <li>Create an API key</li>
+                <li>Copy it</li>
+                <li>Paste it above</li>
+                <li>Click Validate &amp; Save</li>
+            </ol>
+        </div>
+
+        <p class="settings-note">
+            Your API key is stored locally in this browser and is never
+            committed to the project.
+        </p>
+
+        <div class="settings-actions">
+            <button
+                id="save-api-key"
+                class="settings-save"
+                type="button"
+            >
+                Validate &amp; Save
+            </button>
+
+            <button
+                id="clear-api-key"
+                class="settings-clear"
+                type="button"
+            >
+                Clear
+            </button>
+        </div>
+    </div>
+
+
+    <main class="app">
+
+        <header
+            id="app-header"
+            class="app-header"
+        >
+            <div class="robot-avatar">
+                <img
+                    src="/images/qa_bot_logo.png"
+                    alt=""
+                >
+            </div>
+
+            <div>
+                <h1>Captain QA Bot</h1>
+
+                <p>
+                    Your slightly obsessive QA learning buddy.
+                </p>
+            </div>
+        </header>
+
+
+        <section
+            id="chat"
+            class="chat"
+            aria-label="Captain QA Bot conversation"
+        >
+            <div class="message robot-message">
+                <div class="message-author">
+                    <img
+                        class="message-avatar"
+                        src="/images/qa_bot_logo.png"
+                        alt=""
+                    >
+
+                    <span>Captain QA Bot</span>
+                </div>
+
+                <div class="message-content">Howdy, QA Adventurer! 🫡<br><br>Ask me anything about Software Testing.</div>
+            </div>
+        </section>
+
+
+        <form
+            id="chat-form"
+            class="chat-form"
+        >
+            <label
+                for="message-input"
+                class="visually-hidden"
+            >
+                Ask Captain QA Bot a question
+            </label>
+
+            <input
+                id="message-input"
+                name="message"
+                type="text"
+                placeholder="Ask a QA question..."
+                autocomplete="off"
+                required
+            >
+
+            <button
+                type="submit"
+                aria-label="Send message"
+            >
+                ➤
+            </button>
+        </form>
+
+
+        <footer class="app-footer">
+            <span>
+                © 2026 Eugen Rof |
+                <strong>QA Toolset</strong>
+            </span>
+
+            <span>
+                Captain QA Bot v0.1 · Experimental AI playground ·
+                <a
+                    href="https://github.com/eugenrof/qa-robot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    GitHub
+                </a>
+            </span>
+        </footer>
+
+    </main>
+
+
+    <!-- Back to Top -->
+    <button
+        id="back-to-top"
+        class="back-to-top"
+        type="button"
+        aria-label="Back to top"
+        title="Back to top"
+    >
+        ↑
+    </button>
+
+
+    <script
+        type="module"
+        src="/src/main.ts"
+    ></script>
+
+</body>
+</html>
