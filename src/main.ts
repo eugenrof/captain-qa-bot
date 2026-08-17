@@ -153,7 +153,7 @@ function addMessage(
             "message-avatar";
 
         avatar.src =
-            "/images/qa_bot_logo.png";
+            `${import.meta.env.BASE_URL}images/qa_bot_logo.png`;
 
         avatar.alt = "";
 
