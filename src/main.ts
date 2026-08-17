@@ -153,7 +153,7 @@ function addMessage(
             "message-avatar";
 
         avatar.src =
-            `${import.meta.env.BASE_URL}images/qa_bot_logo.png`;
+            "https://raw.githubusercontent.com/eugenrof/captain-qa-bot/refs/heads/main/images/qa_bot_logo.png";
 
         avatar.alt = "";
 
