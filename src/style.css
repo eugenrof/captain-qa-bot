@@ -736,9 +736,16 @@ input {
     .settings-panel {
         top: 64px;
         right: 12px;
-        
     }
+
     .app-header {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .app-header > div:not(.robot-avatar) {
+        flex: 1;
+        min-width: 0;
         text-align: left;
     }
 
@@ -746,7 +753,7 @@ input {
     .app-header p {
         text-align: left;
     }
-
+}
     /*
      * Prevent mobile Safari from zooming the viewport when
      * the Gemini API key input receives focus.
