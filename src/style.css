@@ -243,6 +243,62 @@ input {
     border-color: #666b78;
 }
 
+.settings-help {
+    margin: 14px 0 14px;
+
+    padding: 12px 13px;
+
+    border: 1px solid #2d3038;
+    border-radius: 10px;
+
+    background: #101114;
+}
+
+.settings-help-title {
+    margin: 0 0 6px;
+
+    color: #aeb8ff;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.settings-help-subtitle {
+    margin: 0 0 10px;
+
+    color: #8f939e;
+
+    font-size: 0.75rem;
+    line-height: 1.45;
+}
+
+.settings-help a {
+    color: #aeb8ff;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.settings-help a:hover {
+    color: #d5d9ff;
+}
+
+.settings-help a:focus-visible {
+    outline: 2px solid #aeb8ff;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+.settings-help-steps {
+    margin: 0;
+    padding-left: 18px;
+
+    color: #8f939e;
+
+    font-size: 0.75rem;
+    line-height: 1.55;
+}
+
 .settings-note {
     margin: 10px 0 18px;
 
